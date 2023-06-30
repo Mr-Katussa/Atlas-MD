@@ -34,10 +34,10 @@ module.exports = {
         if (!text) {
           await doReact("❌");
           return m.reply(
-            `Please provide a song name !\n\nExample: *${prefix}song despacito*`
+            `Please Give me a song name !\n\nExample: *${prefix}song Without me*`
           );
         }
-        await doReact("📥");
+        await doReact("💚");
         thumbAtlas = "https://graph.org/file/d0a287fa875c809f234ce.jpg";
         songInfo = await yts(text);
         song = songInfo.videos[0];
@@ -48,13 +48,13 @@ module.exports = {
           m.from,
           {
             image: { url: song.thumbnail },
-            caption: `\nDownloading: *${song.title}*
+            caption: `\nName: *${song.title}*
             
-_🕛 Duration:_ *${song.timestamp}*
+_🕛 DURATION:_ *${song.timestamp}*
 
-_🎀 Channel Name:_ *${song.author.name}*
+_🎀 CHANNEL NAME:_ *${song.author.name}*
 
-_🏮 Video Uploaded:_ *${song.ago}*\n`,
+_🏮 UPLOADED DATE:_ *${song.ago}*\n`,
           },
           { quoted: m }
         );
